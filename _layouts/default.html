@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
 
-    </head>
-    <body>
+    <script type="text/javascript" src="//use.typekit.net/weu6hli.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
-          </div>
+  </head>
+  <body>
 
-          {{ content }}
+    <div class="site">
+      <div class="header">
+      <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+      <a class="extra" href="/">home</a>
+      </div>
 
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Eric Trinh<br />
-                Web Developer<br />
-                me@erictrinh.com
-              </p>
-            </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/erictrinh">github.com/erictrinh</a><br />
-                <a href="https://twitter.com/eric_trinh">twitter.com/eric_trinh</a><br />
-              </p>
-            </div>
-          </div>
-        </div>
+      {{ content }}
 
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      <div class="footer">
+      <div class="contact">
+        <p>
+        Eric Trinh<br />
+        Web Developer<br />
+        me@erictrinh.com
+        </p>
+      </div>
+      <div class="contact">
+        <p>
+        <a href="https://github.com/erictrinh">github.com/erictrinh</a><br />
+        <a href="https://twitter.com/eric_trinh">twitter.com/eric_trinh</a><br />
+        </p>
+      </div>
+      </div>
+    </div>
 
-          ga('create', 'UA-41921449-1', 'erictrinh.com');
-          ga('send', 'pageview');
-        </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    </body>
+      ga('create', 'UA-41921449-1', 'erictrinh.com');
+      ga('send', 'pageview');
+    </script>
+
+  </body>
 </html>
