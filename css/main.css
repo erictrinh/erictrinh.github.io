@@ -8,19 +8,23 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-
-/*html, body { height: 100%; }*/
 
 body {
   background-color: #FFF;
-  font: 16px "ff-tisa-web-pro", Helvetica, Arial, sans-serif;
+  font: 20px "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif;
   text-align: center;
+  color: #333;
+
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "museo-slab", Helvetica, Arial, sans-serif;
-  font-size: 1.5em;
+  font-family: "museo-slab", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.8em;
   font-weight: normal;
 }
 
@@ -47,7 +51,7 @@ ul.posts li {
 
 ul.posts span {
   color: #aaa;
-  font-family: "museo-slab", Monaco, "Courier New", monospace;
+  font-family: "museo-slab", Georgia, Cambria, "Times New Roman", Times, serif;
   font-size: 80%;
 }
 
@@ -58,7 +62,6 @@ ul.posts span {
 /*****************************************************************************/
 
 .site {
-  font-size: 115%;
   text-align: left;
   padding: 0 7%;
   min-width: 15em;
@@ -95,11 +98,12 @@ ul.posts span {
 }
 
 .site .meta {
+  font-family: "museo-slab", Georgia, Cambria, "Times New Roman", Times, serif;
   color: #aaa;
 }
 
 .site .footer {
-  font-size: 80%;
+  font-size: 0.8em;
   color: #666;
   border-top: 4px solid #eee;
   margin-top: 2em;
@@ -132,14 +136,33 @@ ul.posts span {
 /*****************************************************************************/
 
 /* standard */
-.post pre {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .4em;
-}
 
 .post ul, .post ol {
   margin-left: 1.35em;
+}
+
+/* terminal */
+.post pre.terminal {
+  border: 1px solid #000;
+  background-color: #333;
+  color: #FFF;
+}
+
+.post pre.terminal code {
+  background-color: #333;
+}
+
+/*****************************************************************************/
+/*
+/* Code
+/*
+/*****************************************************************************/
+
+.post pre {
+  display: inline-block;
+  padding: 0 .4em;
+  font-size: 0.8em;
+  white-space: pre;
 }
 
 .post code {
@@ -152,13 +175,23 @@ ul.posts span {
   border: none;
 }
 
-/* terminal */
-.post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
+.highlight {
+  padding: 10px 0;
+  width: 100%;
+  overflow: auto;
+
+  border: 1px solid #ddd;
+  background-color: #eef;
 }
 
-.post pre.terminal code {
-  background-color: #333;
+/*****************************************************************************/
+/*
+/* Breakpoints for Smaller Devices
+/*
+/*****************************************************************************/
+
+@media only screen and (max-width: 767px), (max-height: 767px) {
+  body {
+    font-size: 18px;
+  }
 }
