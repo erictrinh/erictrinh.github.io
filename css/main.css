@@ -12,7 +12,7 @@
 }
 
 body {
-  background-color: #FFF;
+  background-color: #fff;
   font: 20px "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif;
   text-align: center;
   color: #333;
@@ -145,7 +145,7 @@ ul.posts span {
 .post pre.terminal {
   border: 1px solid #000;
   background-color: #333;
-  color: #FFF;
+  color: #fff;
 }
 
 .post pre.terminal code {
@@ -190,7 +190,7 @@ ul.posts span {
 /*
 /*****************************************************************************/
 
-@media only screen and (max-width: 767px), (max-height: 767px) {
+@media only screen and (max-width: 767px) {
   body {
     font-size: 18px;
   }
