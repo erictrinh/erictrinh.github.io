@@ -65,11 +65,11 @@ ul.posts span {
 
 .site {
   text-align: left;
-  padding: 0 7%;
-  min-width: 320px;
-  max-width: 800px;
+  min-width: 256px;
+  max-width: 700px;
   margin: 2em auto;
   line-height: 1.5em;
+  width: 80%;
 }
 
 .site .header a {
@@ -152,6 +152,17 @@ ul.posts span {
 
 .post pre.terminal code {
   background-color: #333;
+}
+
+/*****************************************************************************/
+/*
+/* Images
+/*
+/*****************************************************************************/
+
+img {
+  width: 100%;
+  border: 2px solid #ddd;
 }
 
 /*****************************************************************************/
