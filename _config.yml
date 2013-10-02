@@ -1,4 +1,4 @@
 name: eric trinh
-markdown: redcarpet
+markdown: kramdown
 pygments: true
 permalink: pretty
