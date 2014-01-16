@@ -4,11 +4,10 @@ title: eric trinh
 ---
 
 <div id="home">
-  <h1>blog posts</h1>
   <ul class="posts">
     {% for post in site.posts %}
       <li><span>{{ post.date | date_to_string }}</span><br>
-      &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+      <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
 </div>

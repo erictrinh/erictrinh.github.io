@@ -23,18 +23,18 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "museo-slab", Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: 1.8em;
-  font-weight: normal;
+  font-family: "bree-serif", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.6em;
+  font-weight: 500;
+  color: #505E58;
   line-height: 1.2em;
 }
 
 h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
 
-a         { color: #00a; }
-a:hover   { color: #000; }
-a:visited { color: #a0a; }
+a         { color: #249E8A; text-decoration: none; }
+a:hover   { color: #1BBDA3; text-decoration: underline; }
 
 /*****************************************************************************/
 /*
@@ -49,11 +49,13 @@ ul.posts {
 
 ul.posts li {
   line-height: 1.75em;
+  margin-bottom: 1em;
 }
 
 ul.posts span {
   color: #aaa;
-  font-family: "museo-slab", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "bree-serif", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-weight: 300;
   font-size: 80%;
 }
 
@@ -72,35 +74,31 @@ ul.posts span {
   width: 80%;
 }
 
-.site .header a {
+.site .header .block-et {
+  display: inline-block;
+  background: #32FFAD;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 2em;
   font-weight: bold;
-  text-decoration: none;
 }
 
 .site .header h1.title {
   display: inline-block;
-  margin-bottom: 1em;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #136464;
+  line-height: 1em;
+  transition: color 0.5s ease;
 }
 
-.site .header h1.title a {
-  color: #a00;
-}
-
-.site .header h1.title a:hover {
-  color: #000;
-}
-
-.site .header a.extra {
-  color: #aaa;
-  margin-left: 1em;
-}
-
-.site .header a.extra:hover {
-  color: #000;
+.block-et:hover h1.title {
+  color: #333;
 }
 
 .site .meta {
-  font-family: "museo-slab", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "bree-serif", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-weight: 300;
   color: #aaa;
 }
 
@@ -115,10 +113,6 @@ ul.posts span {
 .site .footer .contact {
   float: left;
   margin-right: 3em;
-}
-
-.site .footer .contact a {
-  color: #8085C1;
 }
 
 .site .footer .rss {
