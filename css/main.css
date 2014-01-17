@@ -36,6 +36,10 @@ p { margin: 1em 0; }
 a         { color: #249E8A; text-decoration: none; }
 a:hover   { color: #1BBDA3; text-decoration: underline; }
 
+code, pre {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
 /*****************************************************************************/
 /*
 /* Home
@@ -172,16 +176,18 @@ img {
 /*****************************************************************************/
 
 .post pre {
-  display: inline-block;
-  padding: 0 .4em;
+  display: block;
+  padding: 0.4em 0.8em;
   font-size: 0.8em;
   white-space: pre;
 }
 
-.post code {
+/* inline code */
+.post p > code {
+  background-color: #F7F7F7;
   border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .2em;
+  padding: 0 0.2em;
+  font-size: 0.9em;
 }
 
 .post pre code {
@@ -189,12 +195,11 @@ img {
 }
 
 .highlight {
-  padding: 10px 0;
   width: 100%;
   overflow: auto;
 
   border: 1px solid #ddd;
-  background-color: #eef;
+  background-color: #f9f9f9;
 }
 
 /*****************************************************************************/
