@@ -37,16 +37,16 @@ We're keeping track of the last key pressed, as well as when the last key was pr
 var keys = Bacon.fromEventTarget(keyEmitter, 'key'),
   times = keys.map(function() { return Date.now(); }),
   dualKeys = keys.diff('', function(a, b) { return a + ' ' + b; }),
-  timediff = times.diff(Date.now(), function(a, b) { return b - a; });
+  timeDiffs = times.diff(Date.now(), function(a, b) { return b - a; });
 
-Bacon.onValues(keys, dualKeys, timediff, function(key, dualKey, diff) {
+Bacon.onValues(keys, dualKeys, timeDiffs, function(key, dualKey, diff) {
   vent.emit('shortcut', diff < 300 ? dualKey : key);
 });
 {% endhighlight %}
 
 Dense, but shorter and more expressive. We're creating a few new event streams here. The first is `times`, which emits the current time for each key press. We're only interested in `timeDiffs` though, the time between key presses. We also create the event stream `dualKeys`, which is just a stream consisting of the last key and the current key pressed, concatenated together with a space in between[^diff].
 
-`Bacon.onValues` essentially zips together `keys`, `dualKeys`, and `timediff`, so that when there are values available from each stream (which occurs every time there's a key press), it passes the stream values into the given function. There, we do our time diff logic to check if the keys were pressed within 300 milliseconds of each other.
+`Bacon.onValues` essentially zips together `keys`, `dualKeys`, and `timeDiffs`, so that when there are values available from each stream (which occurs every time there's a key press), it passes the stream values into the given function. There, we do our time diff logic to check if the keys were pressed within 300 milliseconds of each other.
 
 So what's the difference here? In the first example, we're keeping track of *state*. We create variables to keep track of what was last pressed and when. Those variables change as the program runs, and their values are highly dependent on when we observe them. Bacon's event stream transforms are declarative, so we don't need to think about state. This isn't such a big deal now since our program is so small, but eliminating state is generally good because it means our code is more maintainable in the long run. And as you saw, working with Bacon's event stream abstraction also allows for better expressiveness because it allows us to think about what we want instead of how we get it.
 

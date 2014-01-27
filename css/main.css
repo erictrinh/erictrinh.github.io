@@ -30,6 +30,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2em;
 }
 
+h3 {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 2em;
+}
+
 h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
 
@@ -37,7 +43,7 @@ a         { color: #249E8A; text-decoration: none; }
 a:hover   { color: #1BBDA3; text-decoration: underline; }
 
 code, pre {
-  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 }
 
 /*****************************************************************************/
@@ -138,6 +144,7 @@ ul.posts span {
 /* standard */
 
 .post ul, .post ol {
+  margin-top: 1em;
   margin-left: 1.35em;
 }
 
@@ -150,6 +157,12 @@ ul.posts span {
 
 .post pre.terminal code {
   background-color: #333;
+}
+
+.post blockquote {
+  border-left: 0.5em solid #e0e0e0;
+  padding-left: 1em;
+  color: gray;
 }
 
 .footnotes {
