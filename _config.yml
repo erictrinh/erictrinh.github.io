@@ -1,5 +1,5 @@
 name: et
-markdown: kramdown
+markdown: KramdownPygments
 kramdown:
   input: GFM
 highlighter: pygments

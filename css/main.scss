@@ -16,8 +16,8 @@
 
 body {
   background-color: #fff;
-  font: 18px "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif;
-  text-align: center;
+  font-size: 18px;
+  font-family: "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif;
   color: #333;
 
   -webkit-text-size-adjust: 100%;
@@ -80,12 +80,10 @@ ul.posts span {
 /*****************************************************************************/
 
 .site {
-  text-align: left;
-  min-width: 256px;
-  max-width: 700px;
+  max-width: 34em;
   margin: 2em auto;
   line-height: 1.5em;
-  width: 80%;
+  padding: 0 1em;
 }
 
 .site .header .block-et {
@@ -127,6 +125,7 @@ ul.posts span {
 
 .site .footer .contact {
   float: left;
+  font-family: "proxima-nova", sans-serif;
 }
 
 .site .footer .social {
@@ -229,7 +228,7 @@ img {
 /*
 /*****************************************************************************/
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 30em) {
   body {
     font-size: 16px;
   }
