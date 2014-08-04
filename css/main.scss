@@ -1,3 +1,6 @@
+---
+---
+
 /*****************************************************************************/
 /*
 /* Common
@@ -13,7 +16,7 @@
 
 body {
   background-color: #fff;
-  font: 20px "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+  font: 18px "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif;
   text-align: center;
   color: #333;
 
@@ -23,9 +26,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "bree-serif", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "proxima-nova", sans-serif;
   font-size: 1.6em;
-  font-weight: 500;
+  font-weight: bold;
   color: #505E58;
   line-height: 1.2em;
 }
@@ -43,7 +46,7 @@ a         { color: #249E8A; text-decoration: none; }
 a:hover   { color: #1BBDA3; text-decoration: underline; }
 
 code, pre {
-  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-family: Menlo, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 }
 
 /*****************************************************************************/
@@ -64,9 +67,10 @@ ul.posts li {
 
 ul.posts span {
   color: #aaa;
-  font-family: "bree-serif", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "proxima-nova", sans-serif;
   font-weight: 300;
-  font-size: 80%;
+  font-size: 0.7em;
+  text-transform: uppercase;
 }
 
 /*****************************************************************************/
@@ -107,9 +111,10 @@ ul.posts span {
 }
 
 .site .meta {
-  font-family: "bree-serif", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "proxima-nova", sans-serif;
   font-weight: 300;
   color: #aaa;
+  font-size: 0.8em;
 }
 
 .site .footer {
@@ -226,7 +231,7 @@ img {
 
 @media only screen and (max-width: 600px) {
   body {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 

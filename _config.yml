@@ -1,4 +1,6 @@
 name: et
 markdown: kramdown
-pygments: true
+kramdown:
+  input: GFM
+highlighter: pygments
 permalink: pretty
