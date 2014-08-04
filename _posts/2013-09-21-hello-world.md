@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Hello World! - Sincerely, MVP"
-date:   2013-09-21 20:13:19
 ---
 
 It took me one year and 3 months to write this blog post.
