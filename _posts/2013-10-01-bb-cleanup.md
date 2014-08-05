@@ -9,7 +9,7 @@ In Backbone, this amounts to calling `.remove()` on a view after we're done with
 
 For my own apps, I've often relied on a global event dispatcher to signal when my views should be cleaned up. That method would work something like this:
 
-{% highlight javascript %}
+```javascript
 window.vent = _.clone(Backbone.Events);
 
 window.MyRouter = Backbone.Router.extend({
@@ -27,7 +27,7 @@ window.MyRouter = Backbone.Router.extend({
   }
 
 });
-{% endhighlight %}
+```
 
 At the end of every routing function, I bind my cleanup function to the "pageunload" event. This is triggered when the next routing function is called (via `vent.trigger`), thus calling my cleanup function.
 
@@ -35,7 +35,7 @@ If you've been paying attention, this means we have some boilerplate at the top 
 
 Well, check this out:
 
-{% highlight javascript %}
+```javascript
 window.MyRouter = Backbone.Router.extend({
 
   // we're overwriting the route method here
@@ -57,13 +57,13 @@ window.MyRouter = Backbone.Router.extend({
 
   // ..the rest of your router functions
 });
-{% endhighlight %}
+```
 
 It's short, but dense. What we've done is create a "beforeroute" event[^bfroute] that is triggered before any route function is executed. Our `cleanup` function leverages this to run our cleanup code right before the next route is matched.
 
 This allows us to write our routing functions like this instead:
 
-{% highlight javascript %}
+```javascript
 edit: function() {
   var editView = new EditView();
 
@@ -74,7 +74,7 @@ edit: function() {
   });
 
 }
-{% endhighlight %}
+```
 
 In this version, half of our boilerplate is gone, and the actual cleanup phase is way more semantic[^bonus].
 

@@ -7,21 +7,21 @@ A [lot](http://blog.jcoglan.com/2013/03/30/callbacks-are-imperative-promises-are
 
 Imagine you're creating an app where you're working purely with async functions. How do you ensure operation A completes before operation B?
 
-{% highlight javascript %}
+```javascript
 asyncA(); asyncB(); asyncC();
-{% endhighlight %}
+```
 
 Since all these functions are asynchronous, there's no guarantee they'll run in the right order. If your functions return promises, however, you can chain them using `then`, like this:
 
-{% highlight javascript %}
+```javascript
 asyncA().then(asyncB).then(asyncC);
-{% endhighlight %}
+```
 
 In this case, `asyncA` must **complete** before `asyncB` even begins, ensuring they are run in the correct order. Okay, but what if you've got a more complex app, where these async functions can be called from anywhere in your program?
 
 Enter the promise queue. Surprisingly, once you've got (jQuery-style) promises in place, a basic promise queue implementation is pretty simple:
 
-{% highlight javascript %}
+```javascript
 var PromiseQueue = function() {
   var promise = $.Deferred().resolve();
 
@@ -32,20 +32,20 @@ var PromiseQueue = function() {
     }
   };
 };
-{% endhighlight %}
+```
 
 Use it like this:
 
-{% highlight javascript %}
+```javascript
 var prom = new PromiseQueue();
 prom.push(asyncA);
 prom.push(asyncB);
 prom.push(asyncC);
-{% endhighlight %}
+```
 
 Of course, we can `prom.push(asyncThing)` from anywhere in our app, which is the point. This guarantees that our functions will run in the order we `push` them. There is one caveat though: our queue moves onto the next async function even if a previous async function fails. We can make our queue smarter by automatically retrying failed async operations:
 
-{% highlight javascript %}
+```javascript
 var RetryingPromiseQueue = function() {
   // this always returns a resolved promise
   var resolved = function() {
@@ -67,11 +67,11 @@ var RetryingPromiseQueue = function() {
     }
   };
 };
-{% endhighlight %}
+```
 
 This is definitely a little hairier, but still relatively easy to follow. Now let's make up some contrived functions to test it!
 
-{% highlight javascript %}
+```javascript
 var wait = function(time) {
   return function() {
     var def = $.Deferred();
@@ -89,11 +89,11 @@ var waitThenFail = function(time) {
   // same as wait except reject() the def
   // and print "time is up. fail."
 };
-{% endhighlight %}
+```
 
 These two higher-order functions simply return an async function that waits a certain amount of time, then resolves or rejects, printing to the console. Let's try using them:
 
-{% highlight javascript %}
+```javascript
 var fancyThang = new RetryingPromiseQueue();
 
 fancyThang.push(wait(2000));
@@ -108,7 +108,7 @@ fancyThang.push(wait(1000));
 // 2000 is up. fail.
 // 2000 is up. fail.
 // 1000 is up.
-{% endhighlight %}
+```
 
 As you can see, functions that fail are retried once before the queue moves on. This is really cool! If you've ever implemented retry using callbacks, you know it can get messy quickly and usually results in a one-off solution. Here, we get global intelligent retry for free, with **any** async function (as long as it returns a promise). Sure, you could implement your own promise-less async queue, but our super-fancy auto-retrying queue is 21 lines long with generous(ish) comments and whitespace.
 

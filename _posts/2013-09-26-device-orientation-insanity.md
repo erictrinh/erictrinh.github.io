@@ -18,9 +18,9 @@ Well, how do you turn this off? Two shining knights to the rescue: **viewport in
 
 Setting your viewport is as simple as appending this charming fellow into the `<head>` of your HTML document:
 
-{% highlight html %}
+```markup
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{% endhighlight %}
+```
 
 This will set the viewport (the visible area of the page on your device) to the device's width and the initial scale (how far zoomed in you are) to 1.0 (not zoomed in). The important bit is the initial scale. Without it, mobile Safari's text auto-sizing algorithms will beef up your text to disgusting, steroidal proportions.
 
@@ -42,22 +42,22 @@ Unfortunately, not everyone will reload a fresh copy of your page every time the
 
 After a bit of sleuthing, I found many recommendations to do this:
 
-{% highlight css %}
+```css
 -webkit-text-size-adjust: none;
-{% endhighlight %}
+```
 
 That will prevent those silly font-size-adjusting algorithms from touching your perfectly laid out text. It works, **but** it turns out there's a bug in Safari (the desktop version) and older versions of Chrome that prevents users from adjusting the font size on the page if you set `text-size-adjust` to `none`. You're better off doing this:
 
-{% highlight css %}
+```css
 -webkit-text-size-adjust: 100%;
-{% endhighlight %}
+```
 
 You might have noticed the `-webkit-` prefix. This isn't a standardized CSS property yet, so you'll have to do your usual vendor prefixing here:
 
-{% highlight css %}
+```css
 -webkit-text-size-adjust: 100%;
 -moz-text-size-adjust: 100%;
 -ms-text-size-adjust: 100%;
-{% endhighlight %}
+```
 
 And that's it! Sad to think half my afternoon was wasted by 4 lines of HTML and CSS. I should go find some more rewarding hobbies.

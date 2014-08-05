@@ -46,7 +46,7 @@ a         { color: #249E8A; text-decoration: none; }
 a:hover   { color: #1BBDA3; text-decoration: underline; }
 
 code, pre {
-  font-family: Menlo, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
 /*****************************************************************************/
@@ -198,8 +198,14 @@ img {
 .post pre {
   display: block;
   padding: 0.4em 0.8em;
+  line-height: 1.5em;
   font-size: 0.8em;
   white-space: pre;
+
+  overflow: auto;
+
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
 }
 
 /* inline code */
@@ -207,19 +213,11 @@ img {
   background-color: #F7F7F7;
   border: 1px solid #ddd;
   padding: 0 0.2em;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 .post pre code {
   border: none;
-}
-
-.highlight {
-  width: 100%;
-  overflow: auto;
-
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
 }
 
 /*****************************************************************************/

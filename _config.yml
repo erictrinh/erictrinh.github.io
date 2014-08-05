@@ -2,5 +2,9 @@ name: et
 markdown: kramdown
 kramdown:
   input: GFM
-highlighter: pygments
+highlighter: null
 permalink: pretty
+
+# can't change these; these are set by github pages
+safe: true
+lsi: false

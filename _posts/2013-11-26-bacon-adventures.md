@@ -11,7 +11,7 @@ One of the things I wanted to implement was dual-key shortcuts. For example, pre
 
 Here's a preliminary implementation (`vent` is the more complex `EventEmitter` we'll eventually export):
 
-{% highlight javascript %}
+```javascript
 var lastKey = '';
 var lastTime = Date.now();
 
@@ -29,11 +29,11 @@ keyEmitter.on('key', function(key) {
   lastKey = key;
   lastTime = Date.now();
 });
-{% endhighlight %}
+```
 
 We're keeping track of the last key pressed, as well as when the last key was pressed. Whenever a new key is pressed, we diff the time between this key press and the last key press, emitting a dual-key string if the time between key presses is less than 300 milliseconds. For example, pressing `k` then `b` in succession will result in the string `"k b"` being emitted. This works, but check out the equivalent code using Bacon:
 
-{% highlight javascript %}
+```javascript
 var keys = Bacon.fromEventTarget(keyEmitter, 'key'),
   times = keys.map(function() { return Date.now(); }),
   dualKeys = keys.diff('', function(a, b) { return a + ' ' + b; }),
@@ -42,7 +42,7 @@ var keys = Bacon.fromEventTarget(keyEmitter, 'key'),
 Bacon.onValues(keys, dualKeys, timeDiffs, function(key, dualKey, diff) {
   vent.emit('shortcut', diff < 300 ? dualKey : key);
 });
-{% endhighlight %}
+```
 
 Dense, but shorter and more expressive. We're creating a few new event streams here. The first is `times`, which emits the current time for each key press. We're only interested in `timeDiffs` though, the time between key presses. We also create the event stream `dualKeys`, which is just a stream consisting of the last key and the current key pressed, concatenated together with a space in between[^diff].
 

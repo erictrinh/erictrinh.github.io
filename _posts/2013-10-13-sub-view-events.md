@@ -5,7 +5,7 @@ title:  "Why are my sub-view events gone?"
 
 I stumbled into a head-scratching bug the other day while writing a Backbone view. The view in question had a sub-view, something like this:
 
-{% highlight javascript %}
+```javascript
 var ChildView = Backbone.View.extend({
   events: {
     'click .button': 'log'
@@ -31,7 +31,7 @@ var ParentView = Backbone.View.extend({
     return this;
   }
 });
-{% endhighlight %}
+```
 
 Whenever the parent renders, it also re-renders its child view. This seems like perfectly correct code, and if you run this, it seems to work. If you click `.button`, it'll log to the console, as expected.
 
@@ -39,7 +39,7 @@ The problem is if your parent view needs to re-render for any reason, you'll be 
 
 An easy fix is to use jQuery's `detach` method, a fun easter egg that allows you to detach document fragments from the DOM without wiping out their events. Let's re-write the parent view's `render` method using `detach`:
 
-{% highlight javascript %}
+```javascript
 render: function() {
   this.child.$el.detach();
 
@@ -47,6 +47,6 @@ render: function() {
   this.$('.container').html(this.child.render().el);
   return this;
 }
-{% endhighlight %}
+```
 
 Now it works like a charm!

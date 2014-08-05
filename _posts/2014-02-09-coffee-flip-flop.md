@@ -7,15 +7,15 @@ I've been flip-flopping on using Coffeescript in my projects lately. On one hand
 
 What I've decided for now is to do most of my work in Javascript. It's simply a matter of it being the most compatible with the current tools out there. However, I was recently working on an older project in which I had used Coffeescript, and I came upon this gem:
 
-{% highlight coffeescript %}
+```coffeescript
 toQueryString = (hash) ->
   encode = window.encodeURIComponent
   ("#{encode(key)}=#{encode(val)}" for key, val of hash).join('&')
-{% endhighlight %}
+```
 
 It's a function that takes a hash like `{a: 1, b: "boom shaka laka"}` and turns it into a url-encoded query string, like `a=1&b=boom%20shaka%20laka`[^global]. The conciseness is a little bit terrifying, especially compared to the equivalent Javascript:
 
-{% highlight javascript %}
+```javascript
 var toQueryString = function(hash) {
   var encode = window.encodeURIComponent,
     result = [],
@@ -28,21 +28,21 @@ var toQueryString = function(hash) {
 
   return result.join('&');
 };
-{% endhighlight %}
+```
 
 The elegance of the Coffeescript solution comes down to two things: **string interpolation** and (for lack of a better term) **everything-as-an-expression**.
 
 String interpolation isn't the sexiest Coffeescript feature, but I sorely miss it when I'm Javascripting. For example, I weep uncontrollably when I have to write this:
 
-{% highlight javascript %}
+```javascript
 "Hello, " + name + "! Your codename is '" + codeName + ".'"
-{% endhighlight %}
+```
 
 instead of this:
 
-{% highlight coffeescript %}
+```coffeescript
 "Hello, #{name}! Your codename is '#{codeName}.'"
-{% endhighlight %}
+```
 
 Of course, this isn't as big of a gamechanger as Coffeescript's loop comprehensions. The `for...of` loop is an expression that returns an array, which is `join`ed into a string. We can't do this in a functional way in Javascript, because there's no native method for `map`ing over an object[^arrays], which means we have to use Javascript's `for...in` to mutate temporary variables instead.
 
