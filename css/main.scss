@@ -241,31 +241,23 @@ $code-bg: #FCFCFC;
 
 /*****************************************************************************/
 /*
-/* SVG icons
+/* SVG Icons
 /*
 /*****************************************************************************/
 
-.webicon {
-  display: inline-block;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 3em;
-  height: 3em;
-  text-indent: -999em;
-  text-align: left;
-  margin-left: 0.3em;
-  opacity: 0.8;
-  transition: opacity 0.5s;
+img.iconic {
+  // img's are iconic placeholders so hide them until
+  // iconic can replace them with svg's
+  display: none;
 }
 
-.webicon:hover {
-  opacity: 1.0;
-}
+.iconic-social {
+  width: 32px;
+  height: 32px;
+  opacity: 0.5;
+  margin-left: 0.5em;
 
-.webicon.webicon-github {
-  background-image: url('github.svg');
-}
-
-.webicon.webicon-twitter {
-  background-image: url('twitter.svg');
+  &:hover {
+    opacity: 0.7;
+  }
 }
