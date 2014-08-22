@@ -1,6 +1,9 @@
 ---
 ---
 
+@import 'bigfoot'; // footnotes
+@import 'prism'; // syntax highlighting
+
 /*****************************************************************************/
 /*
 /* Common
@@ -195,6 +198,8 @@ img {
 /*
 /*****************************************************************************/
 
+$code-bg: #FCFCFC;
+
 .post pre {
   display: block;
   padding: 0.4em 0.8em;
@@ -205,14 +210,16 @@ img {
   overflow: auto;
 
   border: 1px solid #ddd;
-  background-color: #f9f9f9;
+  border-radius: 0.4em;
+  background-color: $code-bg;
 }
 
 /* inline code */
 .post p > code {
-  background-color: #F7F7F7;
-  border: 1px solid #ddd;
-  padding: 0 0.2em;
+  background-color: $code-bg;
+  border: 1px solid darken($code-bg, 20%);
+  border-radius: 0.4em;
+  padding: 0.2em 0.3em;
   font-size: 0.8em;
 }
 

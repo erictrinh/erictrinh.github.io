@@ -4,6 +4,8 @@ kramdown:
   input: GFM
 highlighter: null
 permalink: pretty
+sass:
+  style: :compressed
 
 # can't change these; these are set by github pages
 safe: true
