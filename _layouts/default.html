@@ -14,37 +14,17 @@
   <body>
 
     <div class="site">
-      <div class="header">
-        <a href="/">
-          <div class="block-et">
-              <h1 class="title">{{ site.name }}</h1>
-          </div>
-        </a>
-      </div>
+      {% include header.html %}
 
       {{ content }}
 
-      <div class="footer">
-        <div class="contact">
-          <p>
-          <span class="name">Eric Trinh</span><br />
-          <span class="title">Web Developer</span><br />
-          <span class="email"><a href="mailto:me@erictrinh.com">me@erictrinh.com</a></span>
-          </p>
-        </div>
-        <div class="social">
-          <p>
-            <a href="https://github.com/erictrinh"><img class="iconic iconic-md" data-src="/images/iconic/social.svg" data-type="github" alt="Github"></a>
-            <a href="https://twitter.com/eric_trinh"><img class="iconic iconic-md" data-src="/images/iconic/social.svg" data-type="twitter" alt="Twitter"></a>
-          </p>
-        </div>
-      </div>
+      {% include footer.html %}
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="/js/bigfoot.min.js"></script>
-    <script src="/js/prism.js"></script>
     <script src="/js/iconic.min.js"></script>
+    <script src="/js/prism.js"></script>
+    <script src="/js/bigfoot.min.js"></script>
     <script type="text/javascript">
         $.bigfoot();
     </script>

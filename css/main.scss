@@ -1,6 +1,7 @@
 ---
 ---
 
+@import 'normalize'; // normalize all the things
 @import 'bigfoot'; // footnotes
 @import 'prism'; // syntax highlighting
 
@@ -10,15 +11,11 @@
 /*
 /*****************************************************************************/
 
-/* Global Reset */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  background-color: #fff;
   font-size: 18px;
   font-family: "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif;
   color: #333;
@@ -34,15 +31,14 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   color: #505E58;
   line-height: 1.2em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
 }
 
 h3 {
   font-size: 1.1em;
-  font-weight: bold;
-  margin-top: 2em;
 }
 
-h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
 
 a         { color: #249E8A; text-decoration: none; }
@@ -60,20 +56,27 @@ code, pre {
 
 ul.posts {
   list-style-type: none;
+  padding-left: 0;
   margin-bottom: 2em;
-}
 
-ul.posts li {
-  line-height: 1.75em;
-  margin-bottom: 1em;
-}
+  li {
+    margin-bottom: 1em;
+  }
 
-ul.posts span {
-  color: #aaa;
-  font-family: "proxima-nova", sans-serif;
-  font-weight: 300;
-  font-size: 0.7em;
-  text-transform: uppercase;
+  .title {
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+  }
+
+  .day {
+    color: #aaa;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    margin-right: 1em;
+    width: 1.5em;
+    display: inline-block;
+  }
 }
 
 /*****************************************************************************/
@@ -84,9 +87,13 @@ ul.posts span {
 
 .site {
   max-width: 34em;
-  margin: 2em auto;
+  margin: 0 auto;
   line-height: 1.5em;
   padding: 0 1em;
+
+  .header {
+    margin-top: 1em;
+  }
 }
 
 .site .header .block-et {
@@ -94,13 +101,12 @@ ul.posts span {
   background: #32FFAD;
   padding: 5px 10px;
   border-radius: 5px;
-  margin-bottom: 2em;
   font-weight: bold;
 }
 
 .site .header h1.title {
   display: inline-block;
-  margin-bottom: 0;
+  margin: 0;
   font-weight: bold;
   color: #136464;
   line-height: 1em;

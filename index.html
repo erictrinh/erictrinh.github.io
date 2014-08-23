@@ -6,8 +6,19 @@ title: Eric Trinh
 <div id="home">
   <ul class="posts">
     {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span><br>
-      <a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% unless post.next %}
+        <h3 class="title">{{ post.date | date: '%B %Y' }}</h3>
+      {% else %}
+        {% capture year %}{{ post.date | date: '%B %Y' }}{% endcapture %}
+        {% capture nyear %}{{ post.next.date | date: '%B %Y' }}{% endcapture %}
+        {% if year != nyear %}
+          <h3 class="title">{{ post.date | date: '%B %Y' }}</h3>
+        {% endif %}
+      {% endunless %}
+
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
     {% endfor %}
   </ul>
 </div>

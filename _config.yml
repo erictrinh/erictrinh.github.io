@@ -3,7 +3,7 @@ markdown: kramdown
 kramdown:
   input: GFM
 highlighter: null
-permalink: pretty
+permalink: /blog/:title
 sass:
   style: :compressed
 
