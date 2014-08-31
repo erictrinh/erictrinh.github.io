@@ -74,7 +74,7 @@ code, pre {
 .site {
   max-width: 34em;
   margin: 0 auto;
-  line-height: 1.5em;
+  line-height: 1.6em;
   padding: 0 1em;
 }
 
@@ -106,11 +106,12 @@ code, pre {
   color: #666;
   border-top: 4px solid #eee;
   margin-top: 2em;
-  overflow: hidden;
+  padding: 1em 0;
 
   .contact {
     float: left;
     font-family: "proxima-nova", sans-serif;
+    line-height: 1.4em;
   }
 
   .social {
@@ -230,4 +231,19 @@ img.iconic {
   &:hover {
     opacity: 0.7;
   }
+}
+
+/*****************************************************************************/
+/*
+/* Clearfix
+/*
+/*****************************************************************************/
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
 }
