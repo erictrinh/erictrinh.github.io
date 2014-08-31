@@ -1,4 +1,8 @@
 name: et
+description: Web developer and sleep enthusiast
+author: Eric Trinh
+
+# build settings
 markdown: kramdown
 kramdown:
   input: GFM

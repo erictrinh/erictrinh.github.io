@@ -54,28 +54,14 @@ code, pre {
 /*
 /*****************************************************************************/
 
-ul.posts {
-  list-style-type: none;
-  padding-left: 0;
-  margin-bottom: 2em;
-
-  li {
+.posts {
+  article {
     margin-bottom: 1em;
   }
 
-  .title {
+  .month {
     margin-top: 2.5em;
     margin-bottom: 1em;
-  }
-
-  .day {
-    color: #aaa;
-    font-family: "proxima-nova", sans-serif;
-    font-weight: bold;
-    font-size: 2em;
-    margin-right: 1em;
-    width: 1.5em;
-    display: inline-block;
   }
 }
 
@@ -90,65 +76,46 @@ ul.posts {
   margin: 0 auto;
   line-height: 1.5em;
   padding: 0 1em;
+}
 
-  .header {
-    margin-top: 1em;
+.header {
+  margin-top: 1em;
+
+  .block-et {
+    display: inline-block;
+    background: #32FFAD;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0;
+    color: #136464;
+    line-height: 1em;
+    transition: color 0.5s ease;
+    font-size: 1.6em;
+    font-family: "proxima-nova", sans-serif;
+
+    &:hover {
+      color: #333;
+      text-decoration: none;
+    }
   }
 }
 
-.site .header .block-et {
-  display: inline-block;
-  background: #32FFAD;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.site .header h1.title {
-  display: inline-block;
-  margin: 0;
-  font-weight: bold;
-  color: #136464;
-  line-height: 1em;
-  transition: color 0.5s ease;
-}
-
-.block-et:hover h1.title {
-  color: #333;
-}
-
-.site .meta {
-  font-family: "proxima-nova", sans-serif;
-  font-weight: 300;
-  color: #aaa;
-  font-size: 0.8em;
-}
-
-.site .footer {
+.footer {
   font-size: 0.8em;
   color: #666;
   border-top: 4px solid #eee;
   margin-top: 2em;
   overflow: hidden;
-}
 
-.site .footer .contact {
-  float: left;
-  font-family: "proxima-nova", sans-serif;
-}
+  .contact {
+    float: left;
+    font-family: "proxima-nova", sans-serif;
+  }
 
-.site .footer .social {
-  float: right;
-}
-
-.site .footer .rss {
-  margin-top: 1.1em;
-  margin-right: -.2em;
-  float: right;
-}
-
-.site .footer .rss img {
-  border: 0;
+  .social {
+    float: right;
+  }
 }
 
 /*****************************************************************************/
@@ -164,15 +131,11 @@ ul.posts {
   margin-left: 1.35em;
 }
 
-/* terminal */
-.post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #fff;
-}
-
-.post pre.terminal code {
-  background-color: #333;
+.meta {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 300;
+  color: #aaa;
+  font-size: 0.8em;
 }
 
 .post blockquote {
@@ -227,6 +190,7 @@ $code-bg: #FCFCFC;
   border-radius: 0.4em;
   padding: 0.2em 0.3em;
   font-size: 0.8em;
+  line-height: 0; // don't interfere with line height of the line
 }
 
 .post pre code {
