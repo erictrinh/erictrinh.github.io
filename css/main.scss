@@ -54,6 +54,14 @@ code, pre {
 /*
 /*****************************************************************************/
 
+.article-list {
+  padding: 0;
+
+  li {
+    list-style-type: none;
+  }
+}
+
 .posts {
   article {
     margin-bottom: 1em;
@@ -130,6 +138,10 @@ code, pre {
 .post ul, .post ol {
   margin-top: 1em;
   margin-left: 1.35em;
+}
+
+.article-title {
+  margin-bottom: 0;
 }
 
 .meta {
