@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Why are my sub-view events gone?"
+title:  "Why are my Backbone sub-view events gone?"
 ---
 
 I stumbled into a head-scratching bug the other day while writing a Backbone view. The view in question had a sub-view, something like this:

@@ -4,6 +4,7 @@ title:  "Device Orientation Insanity"
 ---
 
 When I first envisioned my ideal blog, I knew it had to meet one requirement: it had to be legible as heck (yeah, that's *really* legible). The most well-designed blogs I'd encountered had terrific typography, and comfortable font sizes that were just plain *fun* to read, even on a skinny device like an iPhone.
+
 As luck would have it, this is one area where the default Jekyll theme is lacking. The default theme definitely works on mobile, but it doesn't take into account best practices like [keeping your line lengths between 50 and 75 characters](http://baymard.com/blog/line-length-readability) and pumping up your base font-size to keep text readable on smaller devices.
 
 Increasing the font size sounded like child's play, so I got right to it. Here are the results on an iPhone 5:
