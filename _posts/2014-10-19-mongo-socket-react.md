@@ -30,41 +30,41 @@ var App = React.createClass({
 Our app consists of an exciting text box where you can type things. Cool, right? Now let's get fancier by adding/modifying a few methods in our React component.
 
 ```javascript
-  // ...
-  componentDidMount: function() {
-    // grab state from the server
-    $.ajax({ url: '/message' })
-      .then(function(data) {
-        this.setState(data);
-      }.bind(this))
-    // listen for state changes on the socket
-    socket.on('new state', function(newState) {
-      this.setState(newState);
-    }.bind(this));
-  },
+// ...
+componentDidMount: function() {
+  // grab state from the server
+  $.ajax({ url: '/message' })
+    .then(function(data) {
+      this.setState(data);
+    }.bind(this))
+  // listen for state changes on the socket
+  socket.on('new state', function(newState) {
+    this.setState(newState);
+  }.bind(this));
+},
 
-  networkSetState: function(newStateDiff) {
-    // do some awesome network things here
-    // 1. put the entire state into the database
-    this.saveStateToDB();
-    // 2. put diffs onto the websocket
-    this.postToSocket(newStateDiff);
-    // 3. set state as per usual
-    this.setState(newStateDiff);
-  },
+networkSetState: function(newStateDiff) {
+  // do some awesome network things here
+  // 1. put the entire state into the database
+  this.saveStateToDB();
+  // 2. put diffs onto the websocket
+  this.postToSocket(newStateDiff);
+  // 3. set state as per usual
+  this.setState(newStateDiff);
+},
 
-  postToSocket: function(newStateDiff) {
-    socket.emit('new state', newStateDiff);
-  },
+postToSocket: function(newStateDiff) {
+  socket.emit('new state', newStateDiff);
+},
 
-  saveStateToDB: _.debounce(function() {
-    $.ajax({ url: '/message', type: 'PUT', data: this.state });
-  }, 5000),
+saveStateToDB: _.debounce(function() {
+  $.ajax({ url: '/message', type: 'PUT', data: this.state });
+}, 5000),
 
-  handleChangeMessage: function(e) {
-    this.networkSetState({ message: e.target.value });
-  },
-  // ...
+handleChangeMessage: function(e) {
+  this.networkSetState({ message: e.target.value });
+},
+// ...
 ```
 
 This seems like a lot of work, but believe it or not, you will never[^never] have to write more code for sync or server-side persistence as your app gets more complex.
