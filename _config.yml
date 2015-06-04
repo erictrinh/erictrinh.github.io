@@ -6,7 +6,6 @@ author: Eric Trinh
 markdown: kramdown
 kramdown:
   input: GFM
-highlighter: null
 permalink: /posts/:title
 sass:
   style: :compressed
